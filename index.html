@@ -180,10 +180,14 @@
   .log .final { margin-top: 10px; padding-top: 12px; border-top: 1px dashed var(--line-2); }
   .tag { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--mint); color: var(--mint); font-size: 12px; }
 
+  /* Product photography */
+  .photo { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: #0A0A0E; aspect-ratio: 4 / 5; box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.9); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo figcaption { position: absolute; left: 16px; bottom: 14px; font: 11px var(--mono); color: rgba(236, 236, 242, 0.55); }
+
   /* Events */
-  .event-art { position: relative; justify-self: center; width: min(320px, 100%); }
-  .event-art img { border-radius: 28px; border: 1px solid var(--line-2); box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.9); }
-  .event-art .float { position: absolute; right: -28px; bottom: -20px; background: var(--ink-2); border: 1px solid var(--line-2); border-radius: 14px; padding: 12px 14px; width: 210px; box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8); font-size: 13px; }
+  .event-art { position: relative; justify-self: center; width: min(460px, 100%); }
+    .event-art .float { position: absolute; right: -28px; bottom: 32px; background: var(--ink-2); border: 1px solid var(--line-2); border-radius: 14px; padding: 12px 14px; width: 210px; box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8); font-size: 13px; }
   .float .row { display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; padding: 5px 0; font-variant-numeric: tabular-nums; }
   .float .row + .row { border-top: 1px solid var(--line); }
   .float .row .r { color: var(--muted); font-family: var(--mono); font-size: 12px; }
@@ -357,6 +361,24 @@
     </div>
   </section>
 
+  <section id="runs">
+    <div class="wrap split flip">
+      <figure class="photo" style="margin:0">
+        <img src="assets/product-run-600.jpg" srcset="assets/product-run-600.jpg 600w, assets/product-run-1000.jpg 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="An iPhone showing a Zeta score card: 87 correct in 120 seconds, personal best, number 3 of 41 at Zeta Week." width="1000" height="1250" loading="lazy" decoding="async">
+      </figure>
+      <div>
+        <p class="kicker">Zeta Runs</p>
+        <h2>The 120-second test, scored and shareable.</h2>
+        <p class="sub">Same format as zetamac's default game. Every ranked run ends on a card with your score, your rank, and your school, sized for your story.</p>
+        <ul class="points">
+          <li>Addition, subtraction, multiplication, division <span>standard ranges</span></li>
+          <li>Ranked runs checked on the server <span>see verification</span></li>
+          <li>Rank shown against your event or school <span>#3 of 41</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="score">
     <div class="wrap split">
       <div>
@@ -448,7 +470,9 @@
         </ul>
       </div>
       <div class="event-art">
-        <img src="assets/event-card.jpg" alt="Zeta event card: join my event, code 32590, Zeta Week, Princeton, Oct 28 to Nov 2." width="720" height="1280" loading="lazy" decoding="async">
+        <figure class="photo" style="margin:0">
+          <img src="assets/event-club-600.jpg" srcset="assets/event-club-600.jpg 600w, assets/event-club-1000.jpg 1000w" sizes="(max-width: 900px) 100vw, 460px" alt="A student at a club meeting holds up an iPhone showing a Zeta event code: 32590, Zeta Week, Princeton, Oct 28 to Nov 2." width="1000" height="1250" loading="lazy" decoding="async">
+        </figure>
         <div class="float" aria-hidden="true">
           <div class="hd">Zeta Week · live</div>
           <div class="row"><span class="r">1</span><b>Maya R.</b><span class="s num">91</span></div>
