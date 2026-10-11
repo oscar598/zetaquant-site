@@ -182,7 +182,9 @@
 
   /* Product photography */
   .photo { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--line); background: #0A0A0E; aspect-ratio: 4 / 5; box-shadow: 0 40px 100px -40px rgba(0, 0, 0, 0.9); }
-  .photo img { width: 100%; height: 100%; object-fit: cover; }
+  .photo img, .photo video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo video { position: absolute; inset: 0; opacity: 0; transition: opacity 0.6s ease; }
+  .photo video.on { opacity: 1; }
   .photo figcaption { position: absolute; left: 16px; bottom: 14px; font: 11px var(--mono); color: rgba(236, 236, 242, 0.55); }
 
   /* Events */
@@ -365,6 +367,7 @@
     <div class="wrap split flip">
       <figure class="photo" style="margin:0">
         <img src="assets/product-run-600.jpg" srcset="assets/product-run-600.jpg 600w, assets/product-run-1000.jpg 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="An iPhone showing a Zeta score card: 87 correct in 120 seconds, personal best, number 3 of 41 at Zeta Week." width="1000" height="1250" loading="lazy" decoding="async">
+        <video data-src="assets/run-loop.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
       </figure>
       <div>
         <p class="kicker">Zeta Runs</p>
@@ -608,6 +611,24 @@
       if (visible && !running) play();
       if (!visible) stop();
     }, { threshold: 0.3 }).observe(demo);
+  })();
+
+  // Product loop: fetched only when its section is on screen; the still photo stays for reduced motion.
+  (function () {
+    var v = document.querySelector("video[data-src]");
+    if (!v || matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    var inView = false;
+    v.addEventListener("playing", function () { v.classList.add("on"); }, { once: true });
+    v.addEventListener("canplay", function () { if (inView && v.paused) v.play().catch(function () {}); });
+    new IntersectionObserver(function (e) {
+      inView = e[0].isIntersecting;
+      if (inView) {
+        if (!v.src) v.src = v.dataset.src;
+        v.play().catch(function () {});
+      } else {
+        v.pause();
+      }
+    }, { rootMargin: "200px" }).observe(v);
   })();
 </script>
 </body>
