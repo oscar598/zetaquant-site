@@ -7,20 +7,26 @@
 <meta name="theme-color" content="#0D0D12">
 <link rel="icon" type="image/png" href="../assets/favicon.png">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/archivo-x-900.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root { --ink:#0D0D12; --mint:#9EFAB8; --text:#E8E8EE; --muted:#8A8A96; }
-  body { margin:0; background:var(--ink); color:var(--text); font:16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-  main { max-width: 680px; margin: 0 auto; padding: 48px 20px 80px; }
-  h1 { font-size: 32px; margin: 0 0 4px; }
-  h2 { font-size: 19px; margin: 36px 0 8px; color: var(--mint); }
+  @font-face { font-family: "Zeta Display"; src: url("../assets/fonts/archivo-x-900.woff2") format("woff2"); font-weight: 900; font-stretch: 125%; font-display: swap; }
+  :root { --ink:#0D0D12; --mint:#9EFAB8; --text:#E8E8EE; --muted:#8A8A96; --line: rgba(236,236,242,0.09); color-scheme: dark; }
+  body { margin:0; background:var(--ink); color:var(--text); font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; }
+  .bar { border-bottom: 1px solid var(--line); }
+  .bar div { max-width: 680px; margin: 0 auto; padding: 0 20px; height: 60px; display: flex; align-items: center; }
+  .mark { font: 900 21px "Zeta Display", "Helvetica Neue", sans-serif; font-stretch: 125%; color: var(--text); text-decoration: none; display: inline-flex; gap: 3px; align-items: baseline; }
+  .mark span { font: 400 25px "Times New Roman", Georgia, serif; color: var(--mint); }
+  main { max-width: 680px; margin: 0 auto; padding: 56px 20px 80px; }
+  h1 { font: 900 clamp(30px, 6vw, 40px)/1.05 "Zeta Display", "Helvetica Neue", sans-serif; font-stretch: 125%; margin: 0 0 10px; }
+  h2 { font-size: 19px; margin: 40px 0 8px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--mint); }
   p, li { color: var(--text); }
   .muted { color: var(--muted); font-size: 14px; }
   a { color: var(--mint); }
 </style>
 </head>
 <body>
+<div class="bar"><div><a class="mark" href="../" aria-label="Zeta home"><span>ζ</span>zeta</a></div></div>
 <main>
-  <p><a href="../" style="text-decoration:none;font-weight:700;color:var(--text)"><span style="font-family:'Times New Roman',serif;color:var(--mint);font-weight:400;font-size:22px">ζ</span> zeta</a></p>
   <h1>Zeta Privacy Policy</h1>
   <p class="muted">Effective October 11, 2026</p>
 
