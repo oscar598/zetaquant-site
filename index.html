@@ -119,7 +119,9 @@
   .trusted .wrap { display: flex; align-items: center; gap: 36px; padding-block: 24px; }
   .trusted .k { flex: none; font: 500 11px/1.5 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); width: 11em; }
   .trusted ul { list-style: none; margin: 0; padding: 0; flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
-  .trusted li { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; color: rgba(236, 236, 242, 0.6); white-space: nowrap; }
+  .trusted li { display: flex; align-items: center; }
+  .trusted img { height: var(--h, 24px); width: auto; filter: brightness(0) invert(1); opacity: 0.55; transition: opacity 0.2s; }
+  .trusted li:hover img { opacity: 0.9; }
 
   /* Sections */
   section { padding-block: 96px; }
@@ -234,7 +236,8 @@
     .hero .wrap { padding-block: 40px 64px; gap: 48px; }
     .trusted .wrap { flex-direction: column; align-items: flex-start; gap: 16px; }
     .trusted ul { justify-content: flex-start; gap: 10px 22px; }
-    .trusted li { font-size: 15px; }
+    .trusted ul { gap: 18px 26px; }
+    .trusted img { height: calc(var(--h, 24px) * 0.85); }
     section { padding-block: 72px; }
     .steps, .trust { grid-template-columns: 1fr; }
     .step { border-left: 0; border-top: 1px solid var(--line); }
@@ -326,14 +329,14 @@
     <div class="wrap">
       <p class="k">Trusted by those affiliated with</p>
       <ul>
-        <li>Princeton University</li>
-        <li>Stanford University</li>
-        <li>Boston University</li>
-        <li>UC Berkeley</li>
-        <li>Villanova</li>
-        <li>Jane Street</li>
-        <li>SIG</li>
-        <li>JPMorgan</li>
+        <li><img src="assets/logos/princeton.svg" alt="Princeton University" width="250" height="64" style="--h:28px" decoding="async"></li>
+        <li><img src="assets/logos/stanford.svg" alt="Stanford University" width="800" height="168" style="--h:24px" decoding="async"></li>
+        <li><img src="assets/logos/bu.svg" alt="Boston University" width="500" height="224" style="--h:34px" decoding="async"></li>
+        <li><img src="assets/logos/berkeley.svg" alt="UC Berkeley" width="215" height="68" style="--h:28px" decoding="async"></li>
+        <li><img src="assets/logos/villanova.png" alt="Villanova University" width="588" height="182" style="--h:19px" decoding="async"></li>
+        <li><img src="assets/logos/janestreet.svg" alt="Jane Street" width="104" height="41" style="--h:28px" decoding="async"></li>
+        <li><img src="assets/logos/sig.png" alt="SIG (Susquehanna International Group)" width="1024" height="161" style="--h:21px" decoding="async"></li>
+        <li><img src="assets/logos/jpm.svg" alt="J.P. Morgan" width="234" height="48" style="--h:21px" decoding="async"></li>
       </ul>
     </div>
   </div>
